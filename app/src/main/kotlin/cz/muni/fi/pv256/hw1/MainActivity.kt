@@ -13,12 +13,12 @@ class MainActivity : AppCompatActivity() {
         counter = findViewById(R.id.counter)
         val addButton = findViewById<Button>(R.id.addButton)
         val subButton = findViewById<Button>(R.id.subButton)
-        addButton.setOnClickListener { clickButton(1) }
-        subButton.setOnClickListener { clickButton(-1) }
+        addButton.setOnClickListener { editNumberBy(1) }
+        subButton.setOnClickListener { editNumberBy(-1) }
     }
-    private fun clickButton(action: Int) {
+    private fun editNumberBy(number: Int) {
         var value = Integer.parseInt((counter.text).toString())
-        value += action
+        value += number
         counter.text = value.toString()
     }
 }
